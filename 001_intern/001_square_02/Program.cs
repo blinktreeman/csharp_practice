@@ -1,2 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿Console.WriteLine("Введите два числа");
+
+int numA = int.Parse(Console.ReadLine());
+int numB = int.Parse(Console.ReadLine());
+
+if (numA == numB * numB) Console.WriteLine("Число " + numA + " есть квадрат числа " + numB);
+else Console.WriteLine("Число " + numA + " не является квадратом числа " + numB);
