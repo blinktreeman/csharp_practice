@@ -1,4 +1,6 @@
-﻿Console.WriteLine("Введите два числа");
+﻿// Даны два числа. Показать большее и меньшее число
+
+Console.WriteLine("Введите два числа");
 
 int numA = int.Parse(Console.ReadLine());
 int numB = int.Parse(Console.ReadLine());

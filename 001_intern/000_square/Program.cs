@@ -1,4 +1,6 @@
-﻿Console.WriteLine("Введите число");
+﻿// Вывести квадрат числа
+
+Console.WriteLine("Введите число");
 
 int numA = int.Parse(Console.ReadLine());
 
