@@ -1,2 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿// Найти максимальное из трех чисел
+
+int maximum = 0;
+
+Console.WriteLine("Введите три числа");
+
+for (int i = 0; i < 3; i++) 
+{
+    int number = int.Parse(Console.ReadLine());
+    if (number > maximum) maximum = number;
+}
+
+Console.WriteLine("Макимальное число из заданных равно " + maximum);
