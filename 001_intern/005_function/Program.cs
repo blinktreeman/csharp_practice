@@ -2,7 +2,7 @@
 
 int faMethod(int a)
 {
-    int y = a * 2;  // some function y = f(a)
+    int y = a;  // some function y = f(a)
     return y;
 }
 
