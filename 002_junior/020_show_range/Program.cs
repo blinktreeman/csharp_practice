@@ -5,6 +5,12 @@ int quarterNum = int.Parse(Console.ReadLine());
 
 string xRange = "", yRange = "";
 
+if (quarterNum < 1 | quarterNum > 4)
+{
+    Console.WriteLine("Ошибочное значение четверти");
+    return;
+}
+
 switch (quarterNum)
 {
     case 1:
