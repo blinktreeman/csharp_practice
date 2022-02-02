@@ -10,4 +10,4 @@ for (int i = 0; i < 3; i++)
     if (number > maximum) maximum = number;
 }
 
-Console.WriteLine("Макимальное число из заданных равно " + maximum);
+Console.WriteLine("Максимальное число из заданных равно " + maximum);
