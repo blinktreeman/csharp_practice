@@ -31,6 +31,6 @@ switch (quarterNum)
         break;
 }
 
-Console.WriteLine("Диапазоны координат для четверти " + quarterNum);
+Console.WriteLine("Диапазоны координат для четверти {0}", quarterNum);
 Console.WriteLine("по X " + xRange);
 Console.WriteLine("по Y " + yRange);
