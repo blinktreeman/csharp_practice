@@ -1,17 +1,15 @@
 ﻿// Определить количество цифр в числе
 
 Console.WriteLine("Введите целое число");
-string numStr = Console.ReadLine();
+int number = int.Parse(Console.ReadLine());
+int numDigits = 1;
 
-Console.WriteLine("В числе {0} разрядов {1}", numStr, numStr.Length);
+Console.Write("В числе {0}", number);
 
-int number = int.Parse(numStr);
-int numDigits = 0;
-
-while (number > 0)
+while (Math.Abs(number) > 9)
 {
     number /= 10;
     numDigits ++;
 }
 
-Console.WriteLine("Точно, разрядов {0}", numDigits);
+Console.WriteLine(" разрядов {0}", numDigits);
