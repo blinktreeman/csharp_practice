@@ -10,5 +10,5 @@ if (weekDayNum < 1 | weekDayNum > 7)
     return;
 }
 
-if (weekDayNum == 6 ^ weekDayNum == 7) Console.WriteLine("День недели с номером {0} выходной", weekDayNum);
+if (weekDayNum == 6 | weekDayNum == 7) Console.WriteLine("День недели с номером {0} выходной", weekDayNum);
 else Console.WriteLine("День недели с номером {0} не выходной", weekDayNum);
