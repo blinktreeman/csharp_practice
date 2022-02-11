@@ -10,5 +10,5 @@ Console.WriteLine("Задайте предел для числовой посл�
 
 int limit = int.Parse(Console.ReadLine());
 
-Console.Write("0 1 1 ");
-showFibo (1, 1, limit);
+Console.Write("0 1 ");
+showFibo (0, 1, limit);
