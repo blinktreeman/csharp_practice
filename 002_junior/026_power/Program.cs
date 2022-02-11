@@ -6,7 +6,7 @@ Console.WriteLine("Введите показатель степени В");
 int indexNum = int.Parse(Console.ReadLine());
 
 int sum = 1;
-string sumStr;
+string sumStr = string.Empty;
 
 for (int i = 1; i <= Math.Abs(indexNum); i++) 
 {
@@ -15,4 +15,4 @@ for (int i = 1; i <= Math.Abs(indexNum); i++)
 sumStr = sum.ToString();
 if (indexNum < 0) sumStr = "1/" + sumStr;       // for negative indexes
 
-Console.WriteLine("Число {0} в степени {1} равно {2}", baseNum, indexNum, sumStr);
+Console.WriteLine($"Число {baseNum} в степени {indexNum} равно {sumStr}");
