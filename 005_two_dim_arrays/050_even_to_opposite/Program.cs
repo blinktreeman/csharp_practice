@@ -54,6 +54,6 @@ int[,] arrayA = makeArray(rows, columns);
 
 Console.WriteLine("Исходный массив");
 showArray(arrayA);
-changeElements(arrayA);
+arrayA = changeElements(arrayA);
 Console.WriteLine("Измененный массив");
 showArray(arrayA);
