@@ -12,7 +12,7 @@ Console.WriteLine("Задайте коэффициент масштабиров�
 string scaleInd = Console.ReadLine();
 if (double.Parse(scaleInd, culture) < 0)
 {
-    Console.WriteLine("масштаб не может быть отрицательным");
+    Console.WriteLine("Масштаб не может быть отрицательным");
     return;
 }
 
