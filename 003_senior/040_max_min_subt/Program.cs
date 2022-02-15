@@ -11,4 +11,5 @@ for (int i = 1; i < arrayA.Length; i++)
     minNum = arrayA[i] < minNum ? arrayA[i] : minNum;
 }
 
+Console.WriteLine($"В массиве {string.Join(" ", arrayA)}");
 Console.WriteLine($"Разница между максимальным ({maxNum}) и минимальным ({minNum}) элементом равна {maxNum - minNum}");
