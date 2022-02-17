@@ -16,9 +16,7 @@ do
         Console.WriteLine("Введено {0} чисел больше нуля", aboveZero);
         return;       
     }
-    finally
-    {
-        if (number > 0) aboveZero++;
-    }
+    
+    if (number > 0) aboveZero++;
 }
 while (true);
