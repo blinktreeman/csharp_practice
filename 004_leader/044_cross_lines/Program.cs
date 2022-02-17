@@ -25,7 +25,7 @@ if (k1 == k2)
 
 xCross = (b2 - b1) / (k1 - k2);
 
-// B из первого уравнения:
+// Y из первого уравнения:
 yCross = k1 * xCross + b1;
 
 Console.WriteLine("есть точка с координатами ({0}, {1})", xCross, yCross);
