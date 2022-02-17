@@ -2,7 +2,7 @@
 
 string naturalNumbers(int fromNumber, int endOfInterval)
 {
-    if (fromNumber == endOfInterval) return fromNumber.ToString() + " ";
+    if (fromNumber == endOfInterval) return fromNumber.ToString();
     else return fromNumber.ToString() + " " + naturalNumbers(++fromNumber, endOfInterval);
 }
 
