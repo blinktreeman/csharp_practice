@@ -1,4 +1,5 @@
-﻿// Найти точку пересечения двух прямых заданных уравнением y = k1 * x + b1, y = k2 * x + b2, b1 k1 и b2 и k2 заданы
+﻿// Найти точку пересечения двух прямых заданных уравнением 
+// y = k1 * x + b1, y = k2 * x + b2, b1 k1 и b2 и k2 заданы
 
 double  k1 = 3, k2 = 5, 
         b1 = 2, b2 = 8,
@@ -14,8 +15,8 @@ x = (b2 - b1) / (k1 - k2)
 */
 
 Console.WriteLine("Точка персечения прямых");
-Console.WriteLine("1. y = {0} * x + {1}", k1, b1);
-Console.WriteLine("2. y = {0} * x + {1}", k2, b2);
+Console.WriteLine($"1. y = {k1} * x + {b1}");
+Console.WriteLine($"2. y = {k2} * x + {b2}");
 
 if (k1 == k2) 
 {
@@ -28,4 +29,4 @@ xCross = (b2 - b1) / (k1 - k2);
 // Y из первого уравнения:
 yCross = k1 * xCross + b1;
 
-Console.WriteLine("есть точка с координатами ({0}, {1})", xCross, yCross);
+Console.WriteLine($"есть точка с координатами ({xCross}, {yCross})");
