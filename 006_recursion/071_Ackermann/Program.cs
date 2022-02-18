@@ -1,21 +1,39 @@
 ﻿// Написать программу вычисления функции Аккермана
 
 //              | n + 1,                    m = 0;
-//  A(m, n) =   | A(m - 1, n),              m > 0, n = 0;
+//  A(m, n) =   | A(m - 1, 1),              m > 0, n = 0;
 //              | A(m - 1, A(m, n - 1))     m > 0, n > 0.
 
 int[] Ackermann(int[] mn)
 {
-    if (mn[0] == 0) return mn{0, n + 1};
+    if (mn[0] == 0) 
+    {
+        mn[1]++;
+        return mn;
+    }
+    else if (mn[0] > 0 & mn[1] == 0)
+    {
+        mn[0]--;
+        mn[1] = 1;
+        return Ackermann(mn);
+    }
+    else
+    {
+        mn[1]--;
+        int temp = mn[0] - 1;
+        mn = Ackermann(mn);
+        mn[0] = temp;
+        return Ackermann(mn);
+    }
 }
-
 
 int[] mnAckermann = new int[2];
 Console.WriteLine("Задайте натуральное число");
+// if m 4 and n > 0 or m 3 and n > 10 -> Stack Overflow
 Console.Write("m=");
 mnAckermann[0] = int.Parse(Console.ReadLine());
 Console.WriteLine("Задайте натуральное число");
 Console.Write("n=");
 mnAckermann[1] = int.Parse(Console.ReadLine());
 
-Console.WriteLine(Ackermann(mnAckermann));
+Console.WriteLine($"результат вычисления функции Аккермана равен {Ackermann(mnAckermann)[1]}");
