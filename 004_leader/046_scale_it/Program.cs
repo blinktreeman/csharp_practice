@@ -1,8 +1,6 @@
 ﻿// Написать программу масштабирования фигуры
 
 using System.Globalization;
-// Дробная часть через точку
-CultureInfo culture = CultureInfo.CreateSpecificCulture("en-US");
 
 void ShowResult (double[] vertexArray)
 {
@@ -21,6 +19,9 @@ double[] ScaleIt(double[] vertexArray, double scaleIdx)
     }
     return vertexArray;
 }
+
+// Дробная часть через точку
+CultureInfo culture = CultureInfo.CreateSpecificCulture("en-US");
 
 Console.WriteLine("Задайте координаты вершин фигуры");
 Console.WriteLine("в виде (0,0) (2,0) (2,2) (0,2)");
@@ -42,17 +43,7 @@ double[] vertexDoubleArr = new double[vertexCharArr.Length];
 
 for (int i = 0; i < vertexCharArr.Length; i++)
 {
-    vertexDoubleArr[i] = double.Parse(vertexCharArr[i], culture); //* double.Parse(scaleIndex, culture);
-}
-
-// Проверяем, находится ли одна из вершин фигуры в точке (0, 0)
-for (int i = 0; i < vertexDoubleArr.Length; i += 2)
-{
-    if (vertexDoubleArr[i] == 0 && vertexDoubleArr[i+1] == 0) 
-    {
-        ShowResult(ScaleIt(vertexDoubleArr, scaleIndex));
-        return;
-    }
+    vertexDoubleArr[i] = double.Parse(vertexCharArr[i], culture);
 }
 
 ShowResult(ScaleIt(vertexDoubleArr, scaleIndex));
