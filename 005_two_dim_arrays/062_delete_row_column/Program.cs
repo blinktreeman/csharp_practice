@@ -18,6 +18,7 @@ int[,] initialArray = { { 2, 3, 4, 5 }, { 3, 4, 0, 5 }, { 4, 5, 6, 7 }, { 5, 6, 
 int minNumber = initialArray[0, 0];
 int[] minNumberIndex = {0, 0};
 
+// Found minimal number indexes
 for (int i = 0; i < initialArray.GetLength(0); i++)
 {
     for (int j = 0; j < initialArray.GetLength(1); j++)
