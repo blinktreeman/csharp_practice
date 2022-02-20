@@ -7,8 +7,8 @@ ulong limit = ulong.Parse(Console.ReadLine());
 
 Console.WriteLine("Число М групп взаимно простых чисел при разбиении");
 Console.WriteLine("чисел от 1 до N равно");
-
-Console.WriteLine(Convert.ToInt32(Math.Log2(limit)));
+double groups = Math.Floor(Math.Log2(limit)+1);
+Console.WriteLine(groups);
 
 Console.WriteLine("Группы чисел");
 int index = 0;
