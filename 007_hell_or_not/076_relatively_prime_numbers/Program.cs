@@ -7,14 +7,14 @@ ulong limit = ulong.Parse(Console.ReadLine());
 
 Console.WriteLine("Число М групп взаимно простых чисел при разбиении");
 Console.Write("чисел от 1 до N равно ");
-double groups = Math.Floor(Math.Log2(limit)+1);
+double groups = Math.Floor(Math.Log2(limit) + 1);
 Console.WriteLine(groups);
 
 Console.WriteLine("Группы чисел");
 for (int i = 0; i < groups; i++)
 {
     Console.Write($"Группа {i + 1}: ");
-    for (ulong j = Convert.ToUInt64(Math.Pow(2, i)); (j < Convert.ToUInt64(Math.Pow(2, i+1)) && j <= limit); j++)
+    for (ulong j = Convert.ToUInt64(Math.Pow(2, i)); (j < Convert.ToUInt64(Math.Pow(2, i + 1)) && j <= limit); j++)
         Console.Write($"{j} ");
     Console.WriteLine();
 }
