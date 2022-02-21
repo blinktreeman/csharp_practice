@@ -27,13 +27,6 @@ void showArray(int[,] tempArr)
     }
 }
 
-/*Console.WriteLine("Задайте размер двумерного массива");
-Console.Write("строки m=");
-int rows =  int.Parse(Console.ReadLine());
-Console.Write("столбцы n=");
-int columns =  int.Parse(Console.ReadLine());
-*/
-
 int[,] arrayA = makeArray(3, 3);
 Console.WriteLine("Исходный массив");
 showArray(arrayA);
