@@ -15,7 +15,17 @@ double[] ScaleIt(double[] vertexArray, double scaleIdx)
 {
     for (int i = 0; i < vertexArray.Length; i++)
     {
-        vertexArray[i] = vertexArray[i] * scaleIdx;
+        vertexArray[i] *= scaleIdx;
+    }
+    return vertexArray;
+}
+
+double[] MoveFigure(double[] vertexArray, double deltaX, double deltaY)
+{
+    for (int i = 0; i < vertexArray.Length; i += 2)
+    {
+        vertexArray[i] += deltaX;
+        vertexArray[i + 1] += deltaY;
     }
     return vertexArray;
 }
@@ -38,12 +48,30 @@ if (scaleIndex < 0)
 
 // Разделители
 char[] separators = new char[] {' ', ',', '(', ')'};
-string[] vertexCharArr = vertexStr.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-double[] vertexDoubleArr = new double[vertexCharArr.Length];
+string[] vertexStringArr = vertexStr.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+double[] vertexDoubleArr = new double[vertexStringArr.Length];
 
-for (int i = 0; i < vertexCharArr.Length; i++)
+for (int i = 0; i < vertexStringArr.Length; i++)
 {
-    vertexDoubleArr[i] = double.Parse(vertexCharArr[i], culture);
+    vertexDoubleArr[i] = double.Parse(vertexStringArr[i], culture);
 }
 
-ShowResult(ScaleIt(vertexDoubleArr, scaleIndex));
+// Проверяем, находится ли одна из вершин фигуры в точке (0, 0)
+for (int i = 0; i < vertexDoubleArr.Length; i += 2)
+{
+    if (vertexDoubleArr[i] == 0 && vertexDoubleArr[i+1] == 0) 
+    {
+        ShowResult(ScaleIt(vertexDoubleArr, scaleIndex));
+        return;
+    }
+}
+// First point coordinates
+double firstPointX = vertexDoubleArr[0];
+double firstPointY = vertexDoubleArr[1];
+// Move figure. First point to (0, 0)
+vertexDoubleArr = MoveFigure(vertexDoubleArr, -firstPointX, -firstPointY);
+ScaleIt(vertexDoubleArr, scaleIndex);
+// Move back
+vertexDoubleArr = MoveFigure(vertexDoubleArr, firstPointX, firstPointY);
+
+ShowResult(vertexDoubleArr);
