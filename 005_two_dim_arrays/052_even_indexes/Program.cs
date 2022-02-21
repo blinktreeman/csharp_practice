@@ -1,6 +1,6 @@
 ﻿// В двумерном массиве заменить элементы, у которых оба индекса чётные на их квадраты
 
-int[,] makeArray (int rws, int cols)    // Generate array
+int[,] MakeArray (int rws, int cols)
 {
     Random rand = new Random();
     int[,] tempArray = new int[rws, cols];
@@ -15,7 +15,7 @@ int[,] makeArray (int rws, int cols)    // Generate array
     return tempArray;
 }
 
-void showArray (int[,] tempArr)          //Show array
+void ShowArray (int[,] tempArr)
 {
     for (int i = 0; i < tempArr.GetLength(0); i++)
     {
@@ -27,7 +27,7 @@ void showArray (int[,] tempArr)          //Show array
     }
 }
 
-int[,] changeElements (int[,] chArray)
+int[,] ChangeElements (int[,] chArray)
 {
     for (int i = 0; i < chArray.GetLength(0); i++)
     {
@@ -48,10 +48,10 @@ int rows =  int.Parse(Console.ReadLine());
 Console.Write("столбцы k=");
 int columns =  int.Parse(Console.ReadLine());
 
-int[,] arrayA = makeArray(rows, columns);
+int[,] arrayA = MakeArray(rows, columns);
 
 Console.WriteLine("Исходный массив");
-showArray(arrayA);
-arrayA = changeElements(arrayA);
+ShowArray(arrayA);
+arrayA = ChangeElements(arrayA);
 Console.WriteLine("Измененный массив");
-showArray(arrayA);
+ShowArray(arrayA);
