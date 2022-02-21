@@ -5,7 +5,7 @@ int[,] FillArray (int rowsToFill, int columnsToFill)
     Random rand = new Random();
     int[,] tempArray = new int[rowsToFill, columnsToFill];
 
-    foreach (int i in tempArray) i.Value = rand.Next(0, 10); 
+    //foreach (int i in tempArray) i.Value = rand.Next(0, 10); 
         
     return tempArray;
 }
