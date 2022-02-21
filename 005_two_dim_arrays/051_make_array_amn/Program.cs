@@ -2,7 +2,6 @@
 
 int[,] makeArray (int rws, int cols)
 {
-    Random rand = new Random();
     int[,] tempArray = new int[rws, cols];
 
     for (int i = 0; i < rws; i++)
