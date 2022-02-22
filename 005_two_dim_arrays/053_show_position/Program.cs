@@ -1,6 +1,6 @@
 ﻿// В двумерном массиве показать позиции числа, заданного пользователем или указать, что такого элемента нет
 
-int[,] makeArray (int rws, int cols)
+int[,] FillArray (int rws, int cols)
 {
     Random rand = new Random();
     int[,] tempArray = new int[rws, cols];
@@ -15,7 +15,7 @@ int[,] makeArray (int rws, int cols)
     return tempArray;
 }
 
-void showArray(int[,] tempArr)
+void ShowArray(int[,] tempArr)
 {
     for (int i = 0; i < tempArr.GetLength(0); i++)
     {
@@ -27,16 +27,9 @@ void showArray(int[,] tempArr)
     }
 }
 
-/*Console.WriteLine("Задайте размер двумерного массива");
-Console.Write("строки m=");
-int rows =  int.Parse(Console.ReadLine());
-Console.Write("столбцы n=");
-int columns =  int.Parse(Console.ReadLine());
-*/
-
-int[,] arrayA = makeArray(5, 5);
+int[,] arrayA = FillArray(5, 5);
 Console.WriteLine("Исходный массив");
-showArray(arrayA);
+ShowArray(arrayA);
 Console.WriteLine("Задайте число из массива");
 int number = int.Parse(Console.ReadLine());
 
