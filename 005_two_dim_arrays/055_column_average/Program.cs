@@ -1,6 +1,6 @@
 ﻿// Дан целочисленный массив. Найти среднее арифметическое каждого из столбцов.
 
-int[,] makeArray (int rws, int cols)
+int[,] FillArray (int rws, int cols)
 {
     Random rand = new Random();
     int[,] tempArray = new int[rws, cols];
@@ -15,7 +15,7 @@ int[,] makeArray (int rws, int cols)
     return tempArray;
 }
 
-void showArray(int[,] tempArr)
+void ShowArray(int[,] tempArr)
 {
     for (int i = 0; i < tempArr.GetLength(0); i++)
     {
@@ -27,9 +27,9 @@ void showArray(int[,] tempArr)
     }
 }
 
-int[,] arrayA = makeArray(3, 3);
+int[,] arrayA = FillArray(3, 3);
 Console.WriteLine("Исходный массив");
-showArray(arrayA);
+ShowArray(arrayA);
 
 for (int j = 0; j < arrayA.GetLength(1); j++)
 {
