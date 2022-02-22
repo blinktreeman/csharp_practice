@@ -1,6 +1,6 @@
 ﻿// Показать двумерный массив размером m×n заполненный вещественными числами
 
-double[,] makeArray (int rws, int cols)
+double[,] FillArray (int rws, int cols)
 {
     Random rand = new Random();
     double[,] tempArray = new double[rws, cols];
@@ -15,13 +15,13 @@ double[,] makeArray (int rws, int cols)
     return tempArray;
 }
 
-void showArray(double[,] tempArr)
+void ShowArray(double[,] inputArray)
 {
-    for (int i = 0; i < tempArr.GetLength(0); i++)
+    for (int i = 0; i < inputArray.GetLength(0); i++)
     {
-        for (int j = 0; j < tempArr.GetLength(1); j++)
+        for (int j = 0; j < inputArray.GetLength(1); j++)
         {
-            Console.Write($"{tempArr[i,j]} ");
+            Console.Write($"{inputArray[i,j]} ");
         }
         Console.WriteLine();
     }
@@ -33,6 +33,5 @@ int rows =  int.Parse(Console.ReadLine());
 Console.Write("столбцы n=");
 int columns =  int.Parse(Console.ReadLine());
 
-double[,] arrayA = makeArray(rows, columns);
-
-showArray(arrayA);
+double[,] arrayA = FillArray(rows, columns);
+ShowArray(arrayA);
