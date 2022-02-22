@@ -32,6 +32,7 @@ Console.WriteLine("Исходный массив");
 ShowArray(arrayA);
 Console.WriteLine("Задайте число из массива");
 int number = int.Parse(Console.ReadLine());
+bool numberFound = false;
 
 for (int i = 0; i < arrayA.GetLength(0); i++)
 {
@@ -40,8 +41,8 @@ for (int i = 0; i < arrayA.GetLength(0); i++)
         if (arrayA[i, j] == number)
         {
             Console.WriteLine($"Число находится на {i+1} строке в столбце {j+1}");
-            return;
+            numberFound = true;
         }
     }
 }
-Console.WriteLine("Такого числа нет в массиве");
+if (!numberFound) Console.WriteLine("Такого числа нет в массиве");
