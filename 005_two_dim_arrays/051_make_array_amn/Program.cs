@@ -1,6 +1,6 @@
 ﻿// Задать двумерный массив следующим правилом: Aₘₙ = m+n
 
-int[,] makeArray (int rws, int cols)
+int[,] FillArray (int rws, int cols)
 {
     int[,] tempArray = new int[rws, cols];
 
@@ -8,13 +8,14 @@ int[,] makeArray (int rws, int cols)
     {
         for (int j = 0; j < cols; j++)
         {
+            // Amn = m + n
             tempArray[i, j] = i + j; 
         }
     }
     return tempArray;
 }
 
-void showArray(int[,] tempArr)
+void ShowArray(int[,] tempArr)
 {
     for (int i = 0; i < tempArr.GetLength(0); i++)
     {
@@ -32,6 +33,5 @@ int rows =  int.Parse(Console.ReadLine());
 Console.Write("столбцы n=");
 int columns =  int.Parse(Console.ReadLine());
 
-int[,] arrayA = makeArray(rows, columns);
-
-showArray(arrayA);
+int[,] arrayA = FillArray(rows, columns);
+ShowArray(arrayA);
