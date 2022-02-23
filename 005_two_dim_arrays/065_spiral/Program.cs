@@ -42,10 +42,8 @@ void ShowArray(int[,] inputArray)
 }
 
 int[,] spiralArray = new int[4, 4];
-
 int indexI = 0, 
-    indexJ = 0, 
-    rotates = 0;
+    indexJ = 0;
 
 for (int i = 1; i <= spiralArray.GetLength(0) * spiralArray.GetLength(1); i++)
 {
@@ -56,14 +54,13 @@ for (int i = 1; i <= spiralArray.GetLength(0) * spiralArray.GetLength(1); i++)
     }
     else 
     {
-        RotateArray(spiralArray);
-        rotates++;
-        indexI = rotates / 4;
-        indexJ = rotates / 5 + 1;
+        int temp = indexJ;
+        indexJ = indexI + 1;
+        indexI = spiralArray.GetLength(1) - temp;
+        spiralArray = RotateArray(spiralArray);
         spiralArray[indexI, indexJ] = i;
         indexJ++;
     }
 }
-
 while (spiralArray[0, 0] != 1) RotateArray(spiralArray);
 ShowArray(spiralArray);
