@@ -47,20 +47,21 @@ int indexI = 0,
 
 for (int i = 1; i <= spiralArray.GetLength(0) * spiralArray.GetLength(1); i++)
 {
-    if (indexJ < spiralArray.GetLength(1) && spiralArray[indexI, indexJ] == 0)
+    if (indexJ < spiralArray.GetLength(1) && spiralArray[indexI, indexJ] == 0)  // Пока не достигли конца строки
+    {                                                                           // и значение в масиве равно 0
+        spiralArray[indexI, indexJ] = i;                                        // 1 2 3 4
+        indexJ++;                                                               // 0 0 0 0 
+    }                                                                           // 0 0 0 0
+    else                                                                        // 0 0 0 0
     {
-        spiralArray[indexI, indexJ] = i;
-        indexJ++;
-    }
-    else 
-    {
-        int temp = indexJ;
-        indexJ = indexI + 1;
-        indexI = spiralArray.GetLength(1) - temp;
-        spiralArray = RotateArray(spiralArray);
-        spiralArray[indexI, indexJ] = i;
-        indexJ++;
+        int temp = indexJ;                                                      // иначе вращаем матрицу против
+        indexJ = indexI + 1;                                                    // часовой стрелки и продолжаем
+        indexI = spiralArray.GetLength(1) - temp;                               // 4 5 0 0
+        spiralArray = RotateArray(spiralArray);                                 // 3 0 0 0
+        spiralArray[indexI, indexJ] = i;                                        // 2 0 0 0
+        indexJ++;                                                               // 1 0 0 0
     }
 }
+// Вращать пока 1 не будет в позиции 0, 0
 while (spiralArray[0, 0] != 1) RotateArray(spiralArray);
 ShowArray(spiralArray);
