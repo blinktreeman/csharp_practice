@@ -2,11 +2,11 @@
 // Покажите все слова, состоящие из n букв, 
 // которые можно построить из букв этого алфавита
 
-string ShowWords(string[] chars, string quaternaryNum, int charsNum)
+string ShowWords(string[] chars, string anotherNum, int charsNum)
 {
-    if (charsNum == 1) return chars[Convert.ToInt32(quaternaryNum[^1].ToString())]; 
-    else return chars[Convert.ToInt32(quaternaryNum[^charsNum].ToString())] 
-        + ShowWords(chars, quaternaryNum, --charsNum);
+    if (charsNum == 1) return chars[Convert.ToInt32(anotherNum[^1].ToString())]; 
+    else return chars[Convert.ToInt32(anotherNum[^charsNum].ToString())] 
+        + ShowWords(chars, anotherNum, --charsNum);
 }
 
 // Convert to another number system
