@@ -9,27 +9,27 @@ string ShowWords(string[] chars, string quaternaryNum, int charsNum)
         + ShowWords(chars, quaternaryNum, --charsNum);
 }
 
-// Convert to quaternary number
-string ConvertToQuaternary(int inputDecimal)
+// Convert to another number system
+string ConvertToAnother(int inputDecimal, int baseNum)
 {
-    if (inputDecimal < 4) return inputDecimal.ToString();
-    else return (ConvertToQuaternary(inputDecimal / 4)).ToString() 
-                + (inputDecimal % 4).ToString();
+    if (inputDecimal < baseNum) return inputDecimal.ToString();
+    else return (ConvertToAnother(inputDecimal / baseNum, baseNum)).ToString() 
+                + (inputDecimal % baseNum).ToString();
 }
 
 Console.WriteLine("Задайте количество букв в слове");
 Console.Write("n=");
 int charactersNumber = int.Parse(Console.ReadLine());
-string[] characters = {"а", "и", "с", "в"};
+string[] characters = {"а", "и", "с", "в", "ы"};
 
 int wordsNumber = Convert.ToInt32(Math.Pow(characters.Length, charactersNumber));
 
 Console.WriteLine($"Слова, состоящие из {charactersNumber} букв");
 for (int i = 0; i < wordsNumber; i++) 
 {
-    string quaternaryNumber = ConvertToQuaternary(i);
+    string anotherNumber = ConvertToAnother(i, characters.Length);
     // Fill null digits with zeros
-    while (quaternaryNumber.Length < charactersNumber) quaternaryNumber = "0" + quaternaryNumber;
+    while (anotherNumber.Length < charactersNumber) anotherNumber = "0" + anotherNumber;
     
-    Console.Write($"{ShowWords(characters, quaternaryNumber, charactersNumber)} ");
+    Console.Write($"{ShowWords(characters, anotherNumber, charactersNumber)} ");
 }
